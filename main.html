@@ -2,8 +2,36 @@
 <html>
     <head>
         <script data-main="app" src="dep/require.js"></script>
+        <link rel="stylesheet" href="./css/main.css">
     </head>
     <body>
-        <h1>Hello World</h1>
+        <script type="text/html" id='getPool-template'>
+            {{#getPool}}
+            <ul>
+                <li>cname : {{cname}}</li>
+                <li>ename : {{ename}}</li>
+                <li>sex : {{sex}}</li>
+                <li>job : {{job}}</li>
+            </ul>
+            {{/getPool}}
+        </script>
+        <script type="text/html" id='myPool-template'>
+            {{#myPool}}
+            <ul>
+                <li>cname : {{cname}}</li>
+                <li>ename : {{ename}}</li>
+                <li>sex : {{sex}}</li>
+                <li>job : {{job}}</li>
+            </ul>
+            {{/myPool}}
+        </script>
+        <div id="main-stage">
+            <div id="get-pool">
+                
+            </div>
+            <div id="my-pool">
+                
+            </div>
+        </div>
     </body>
 </html>
