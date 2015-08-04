@@ -11,7 +11,7 @@
       body {
         font-family: '微软雅黑';
       }
-      #b1 {
+      .white-b {
         width: 90%;
         margin: 0 auto;
         border: 1px solid #ddd;
@@ -24,7 +24,7 @@
         background: #fff;
         color: #888;
       }
-      #b2 {
+      .big-b {
         width: 90%;
         margin: 0 auto;
         border: 1px solid #ddd;
@@ -36,6 +36,12 @@
         cursor: pointer;
         background: #cbee4b;
         color: #ff6c00;
+        
+      }
+      #b1 {
+        
+      }
+      #b2 {
         position: relative;
       }
       #b2-point {
@@ -64,18 +70,6 @@
         text-align: center;
       }
       #back-b {
-        width: 90%;
-        margin: 0 auto;
-        border: 1px solid #ddd;
-        font-size: 16px;
-        border-radius: 5px;
-        padding: 30px 0;
-        text-align: center;
-        margin-top: 20px;
-        cursor: pointer;
-        background: #fff;
-        color: #888;
-        font-size: 25px;
       }
       .charge-b {
         width: 90%;
@@ -95,13 +89,16 @@
       .charge-b span {
         font-size: 16px;
       }
+      #back-b {
+        display: none;
+      }
     </style>
   </head>
   <body>
-    <div id="b1">
+    <div id="b1" class="white-b">
         排行榜
     </div>
-    <div id="b2">
+    <div id="b2" class="big-b">
         充值
         <div id="b2-point">4</div>
     </div>
@@ -118,9 +115,6 @@
         <td>123</td>
       </tr>
     </table>
-    <div class="rank" id="back-b">
-        返回
-    </div>
     <div class="charge-b">
         充值6元<br>
         <span>无返还</span>
@@ -145,24 +139,26 @@
         充值1260元<br>
         <span>返还860元</span>
     </div>
-
+    <div class="white-b" id="back-b">
+        回首页
+    </div>
     <script type="text/javascript">
       $(function () {
 
         $('#b1').on('click', gotoRank);
         $('#b2').on('click', gotoCharge);
-
+        $('#back-b').on('click', gotoIndex);
         function gotoRank() {
           $('#b1,#b2,.charge-b').hide();
-          $('table').show();
+          $('.rank,#back-b').show();
         }
         function gotoIndex () {
-          $('table,.charge-b').hide();
+          $('.rank,.charge-b,#back-b').hide();
           $('#b1,#b2').show();
         }
         function gotoCharge () {
-          $('table,#b1,#b2').hide();
-          $('.charge-b').show(); 
+          $('#b1,#b2,.rank').hide();
+          $('#back-b,.charge-b').show(); 
         }
       })
     </script>
