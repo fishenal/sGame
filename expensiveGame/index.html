@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>百度专家</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <style type="text/css">
+      body {
+        font-family: '微软雅黑';
+      }
+      #b1 {
+        width: 90%;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 30px 0;
+        text-align: center;
+        margin-top: 20px;
+        cursor: pointer;
+        background: #fff;
+        color: #888;
+      }
+      #b2 {
+        width: 90%;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        font-size: 35px;
+        border-radius: 5px;
+        padding: 50px 0;
+        text-align: center;
+        margin-top: 20px;
+        cursor: pointer;
+        background: #cbee4b;
+        color: #ff6c00;
+        position: relative;
+      }
+      #b2-point {
+        position: absolute;
+        right: -15px;
+        top: -15px;
+        width: 40px;
+        height: 40px;
+        font-size: ;
+        background: #ff6c00;
+        color: #fff;
+        border-radius: 20px;
+        font-size: 25px;
+        line-height: 40px;
+        text-align: center;
+      }
+      table {
+        width: 90%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin: 0 auto;
+        display: none;
+      }
+      td, th {
+        border: 1px solid #888;
+        text-align: center;
+      }
+      #back-b {
+        width: 90%;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 30px 0;
+        text-align: center;
+        margin-top: 20px;
+        cursor: pointer;
+        background: #fff;
+        color: #888;
+        font-size: 25px;
+      }
+      .charge-b {
+        width: 90%;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 30px 0;
+        text-align: center;
+        margin-top: 20px;
+        cursor: pointer;
+        background: #cbee4b;
+        color: #ff6c00;
+        font-size: 25px;
+        display: none;
+      }
+      .charge-b span {
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="b1">
+        排行榜
+    </div>
+    <div id="b2">
+        充值
+        <div id="b2-point">4</div>
+    </div>
+
+    <table class="rank">
+      <tr>
+        <th>排名</th>
+        <th>姓名</th>
+        <th>充值数（元）</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>xxx</td>
+        <td>123</td>
+      </tr>
+    </table>
+    <div class="rank" id="back-b">
+        返回
+    </div>
+    <div class="charge-b">
+        充值6元<br>
+        <span>无返还</span>
+    </div>
+    <div class="charge-b">
+        充值60元<br>
+        <span>返还6元</span>
+    </div>
+    <div class="charge-b">
+        充值160元<br>
+        <span>返还60元</span>
+    </div>
+    <div class="charge-b">
+        充值460元<br>
+        <span>返还160元</span>
+    </div>
+    <div class="charge-b">
+        充值860元<br>
+        <span>返还460元</span>
+    </div>
+    <div class="charge-b">
+        充值1260元<br>
+        <span>返还860元</span>
+    </div>
+
+    <script type="text/javascript">
+      $(function () {
+
+        $('#b1').on('click', gotoRank);
+        $('#b2').on('click', gotoCharge);
+
+        function gotoRank() {
+          $('#b1,#b2,.charge-b').hide();
+          $('table').show();
+        }
+        function gotoIndex () {
+          $('table,.charge-b').hide();
+          $('#b1,#b2').show();
+        }
+        function gotoCharge () {
+          $('table,#b1,#b2').hide();
+          $('.charge-b').show(); 
+        }
+      })
+    </script>
+  </body>
+</html>
